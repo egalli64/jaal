@@ -26,9 +26,11 @@ public class Merge {
         int k = 0;
         for (; i < left.length && j < right.length; k++) {
             if (left[i] < right[j]) {
-                result[k] = left[i++];
+                result[k] = left[i];
+                i += 1;
             } else {
-                result[k] = right[j++];
+                result[k] = right[j];
+                j += 1;
             }
         }
 
@@ -58,7 +60,8 @@ public class Merge {
     }
 
     /**
-     * Append the elements of the first array from index i in the second one from index j
+     * Append the elements of the first array from index i in the second one from
+     * index j
      * <p>
      * Precondition: compatible sizes and indexes
      * 
