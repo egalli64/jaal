@@ -6,15 +6,24 @@
 package com.example.jaal.m1.s07;
 
 /**
- * Basic recursive and iterative implementations of the factorial function
- * <p>
- * TODO: robustness
+ * Basic recursive and iterative implementations of the factorial function.
+ * 
+ * <pre>
+ *  0! = 1
+ *  1! = 1
+ *  2! = 2 * 1
+ *  3! = 3 * 2 * 1 = 6
+ *  ...
+ *  n! = n * (n-1) * ... * 2 * 1
+ * </pre>
+ * 
+ * TODO: robustness, what if the user pass a negative or a large positive input?
  */
 public class Factorial {
     /**
-     * Recursive factorial
+     * Recursive implementation
      * 
-     * @param n A natural number
+     * @param n A natural number (0+)
      * @return the factorial of n
      */
     public static long recursive(int n) {
@@ -26,7 +35,7 @@ public class Factorial {
     }
 
     /**
-     * Iterative factorial
+     * Iterative implementation
      * 
      * @param n A natural number
      * @return the factorial of n
