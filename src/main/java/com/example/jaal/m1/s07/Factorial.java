@@ -23,7 +23,7 @@ public class Factorial {
     /**
      * Recursive implementation
      * 
-     * @param n A natural number (0+)
+     * @param n a natural number (0+)
      * @return the factorial of n
      */
     public static long recursive(int n) {
@@ -32,6 +32,32 @@ public class Factorial {
         }
 
         return n * recursive(n - 1);
+    }
+
+    /**
+     * Tail recursive implementation - not worthy, since there is no support to TCO
+     * in the compiler (yet)
+     * 
+     * @param n a natural number (0+)
+     * @return the factorial of n
+     */
+    public static long tailRecursive(int n) {
+        return tailRecursiveImpl(n, 1);
+    }
+
+    /**
+     * Hide the tail recursive details to the caller
+     * 
+     * @param n           a natural number (0+)
+     * @param accumulator the partial result
+     * @return the factorial of n
+     */
+    private static long tailRecursiveImpl(int n, long accumulator) {
+        if (n < 2) {
+            return accumulator;
+        }
+
+        return tailRecursiveImpl(n - 1, accumulator * n);
     }
 
     /**
@@ -57,7 +83,8 @@ public class Factorial {
      */
     public static void main(String[] args) {
         int n = 20;
-        System.out.printf("Factorial of %d (recursive) is %d%n", n, recursive(n));
-        System.out.printf("Factorial of %d (iterative) is %d%n", n, iterative(n));
+        System.out.printf("Factorial of %d is %d (recursive)%n", n, recursive(n));
+        System.out.printf("Factorial of %d is %d (tail recursive)%n", n, tailRecursive(n));
+        System.out.printf("Factorial of %d is %d (iterative)%n", n, iterative(n));
     }
 }

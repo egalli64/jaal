@@ -36,6 +36,12 @@ class FactorialTest {
 
     @ParameterizedTest
     @CsvSource({ "0, 1", "1,1", "10, 3628800", "20, 2432902008176640000" })
+    void tailRecursivePlain(int input, long expected) {
+        assertThat(Factorial.tailRecursive(input)).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @CsvSource({ "0, 1", "1,1", "10, 3628800", "20, 2432902008176640000" })
     void iterativePlain(int input, long expected) {
         assertThat(Factorial.iterative(input)).isEqualTo(expected);
     }
