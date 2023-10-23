@@ -23,7 +23,7 @@ class FibonacciTest {
      */
     @Test
     void recursiveNegative() {
-        assertThat(Fibonacci.recursive(-1024)).isEqualTo(0L);
+        assertThat(Fibonacci.recursive(-1024)).isNegative();
     }
 
     /**
@@ -45,7 +45,7 @@ class FibonacciTest {
      */
     @Test
     void tailRecursiveNegative() {
-        assertThat(Fibonacci.tailRecursive(-1024)).isEqualTo(0L);
+        assertThat(Fibonacci.tailRecursive(-1024)).isNegative();
     }
 
     @Test
@@ -74,7 +74,7 @@ class FibonacciTest {
      */
     @Test
     void iterativeNegative() {
-        assertThat(Fibonacci.iterative(-1024)).isEqualTo(0L);
+        assertThat(Fibonacci.iterative(-1024)).isNegative();
     }
 
     /**

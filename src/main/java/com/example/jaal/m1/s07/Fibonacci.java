@@ -18,10 +18,8 @@ public class Fibonacci {
      * @return the Fibonacci of n
      */
     public static long recursive(int n) {
-        if (n < 1) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
+        if (n < 2) {
+            return n;
         }
 
         return recursive(n - 1) + recursive(n - 2);
@@ -34,10 +32,8 @@ public class Fibonacci {
      * @return the Fibonacci of n
      */
     public static long tailRecursive(int n) {
-        if (n < 1) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
+        if (n < 2) {
+            return n;
         }
 
         return tailRecursive(0, 1, n);
@@ -65,10 +61,8 @@ public class Fibonacci {
      * @return the Fibonacci of n
      */
     public static long iterative(int n) {
-        if (n < 1) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
+        if (n < 2) {
+            return n;
         }
 
         long previous = 1;
