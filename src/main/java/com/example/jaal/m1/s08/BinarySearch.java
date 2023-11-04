@@ -86,14 +86,14 @@ public class BinarySearch {
      * @param args not used
      */
     public static void main(String[] args) {
-        int[] values = { -55, -44, -21, -8, 0, 12, 27, 51, 93, 115, 220 };
+        int[] values = { 3, 6, 10, 15, 19, 22, 27, 34, 36, 42, 45 };
         log.trace("Array is {}", values);
 
-        int targets[] = { 12, 93, 115, 100 };
+        int targets[] = { 22, 36, 42, 35 };
 
         for (int target : targets) {
-            System.out.printf("%d is @%d (recursive)%n", target, recursive(values, target));
-            System.out.printf("%d is @%d (iterative)%n", target, iterative(values, target));
+            System.out.printf("%d is at %d (recursive)%n", target, recursive(values, target));
+            System.out.printf("%d is at %d (iterative)%n", target, iterative(values, target));
         }
     }
 }
