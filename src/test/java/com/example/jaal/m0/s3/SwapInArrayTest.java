@@ -1,3 +1,8 @@
+/*
+ * Java - Algorithms
+ * 
+ * https://github.com/egalli64/jaal
+ */
 package com.example.jaal.m0.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,9 +12,10 @@ import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 import org.junit.jupiter.api.Test;
 
 class SwapInArrayTest {
+    private int[] data = { 2, -9, 1, 3, 88, 5 };
+
     @Test
     void swapPlain() {
-        int[] data = { 2, -9, 1, 3, 88, 5 };
         int i = 1;
         int j = 4;
         int expectedValueI = data[j];
@@ -22,12 +28,11 @@ class SwapInArrayTest {
 
     @Test
     void swapSame() {
-        int[] data = { 2, -9, 1, 3, 88, 5 };
         int i = 1;
-        int expectedValueI = data[i];
+        int expected = data[i];
 
         SwapInArray.swap(data, i, i);
-        assertThat(data[i]).isEqualTo(expectedValueI);
+        assertThat(data[i]).isEqualTo(expected);
     }
 
     @Test
@@ -37,7 +42,6 @@ class SwapInArrayTest {
 
     @Test
     void swapOutOfBounds() {
-        int[] data = { 2, -9, 1, 3, 88, 5 };
         assertThatIndexOutOfBoundsException().isThrownBy(() -> SwapInArray.swap(data, 0, 42));
     }
 }
