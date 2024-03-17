@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m1.s2;
+package com.example.jaal.m2.s2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;

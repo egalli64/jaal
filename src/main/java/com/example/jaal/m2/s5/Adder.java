@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m1.s5;
+package com.example.jaal.m2.s5;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
