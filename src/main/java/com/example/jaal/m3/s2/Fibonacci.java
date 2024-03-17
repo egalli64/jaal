@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m1.s6;
+package com.example.jaal.m3.s2;
 
 /**
  * Basic recursive and iterative implementations of the Fibonacci function

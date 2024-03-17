@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m1.s8;
+package com.example.jaal.m3.s4;
 
 /**
  * Merging two sorted arrays in a new sorted one
