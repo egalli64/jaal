@@ -1,4 +1,9 @@
-package com.example.jaal.m2.s02;
+/*
+ * Java - Algorithms
+ * 
+ * https://github.com/egalli64/jaal
+ */
+package com.example.jaal.m4.s2;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;
