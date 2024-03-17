@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m0.s2;
+package com.example.jaal.m1.s2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
 /**
  * Comparing numbers for minimum / maximum value
  */
-public class AReassignment {
-    private static final Logger log = LoggerFactory.getLogger(AReassignment.class);
+public class BDeclaration {
+    private static final Logger log = LoggerFactory.getLogger(BDeclaration.class);
 
     /**
-     * Tentative definition, then check the alternative
+     * Declare, then initialize
      * 
      * @param args not used
      */
@@ -24,13 +24,17 @@ public class AReassignment {
         int b = 24;
         log.info("First is {}, second is {}", a, b);
 
-        int min = a;
-        if (b < a) {
+        int min;
+        if (a < b) {
+            min = a;
+        } else {
             min = b;
         }
 
-        int max = a;
-        if (b > a) {
+        int max;
+        if (a > b) {
+            max = a;
+        } else {
             max = b;
         }
 

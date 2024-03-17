@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m0.s2;
+package com.example.jaal.m1.s2;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
 /**
  * Comparing numbers for minimum / maximum value
  */
-public class BDeclaration {
-    private static final Logger log = LoggerFactory.getLogger(BDeclaration.class);
+public class CTernary {
+    private static final Logger log = LoggerFactory.getLogger(CTernary.class);
 
     /**
-     * Declare, then initialize
+     * Initialize the right value checking with ternary operator
      * 
      * @param args not used
      */
@@ -24,20 +24,8 @@ public class BDeclaration {
         int b = 24;
         log.info("First is {}, second is {}", a, b);
 
-        int min;
-        if (a < b) {
-            min = a;
-        } else {
-            min = b;
-        }
-
-        int max;
-        if (a > b) {
-            max = a;
-        } else {
-            max = b;
-        }
-
+        int min = a < b ? a : b;
+        int max = a > b ? a : b;
         System.out.printf("Min is %d and max is %d\n", min, max);
     }
 }

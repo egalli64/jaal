@@ -1,4 +1,4 @@
-package com.example.jaal.m0.s3;
+package com.example.jaal.m1.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIndexOutOfBoundsException;

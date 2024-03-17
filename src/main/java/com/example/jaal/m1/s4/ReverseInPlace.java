@@ -3,7 +3,7 @@
  * 
  * https://github.com/egalli64/jaal
  */
-package com.example.jaal.m0.s4;
+package com.example.jaal.m1.s4;
 
 import java.util.Arrays;
 
