@@ -65,7 +65,7 @@ public class BinarySearch {
         int first = 0;
         int last = values.length - 1;
 
-        while (first < last) {
+        while (first <= last) {
             int current = first + (last - first) / 2;
             log.trace("Checking {}", current);
             if (values[current] > target) {
