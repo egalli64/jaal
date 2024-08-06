@@ -11,27 +11,27 @@ import org.junit.jupiter.api.Test;
 
 class ReverseCopyTest {
     @Test
-    void reverseNull() {
+    void reverseWhenNull() {
         int[] reversed = ReverseCopy.reverse(null);
         assertThat(reversed).isNull();
     }
 
     @Test
-    void reverseEmpty() {
+    void reverseWhenEmpty() {
         int[] input = {};
         int[] reversed = ReverseCopy.reverse(input);
         assertThat(reversed).isEmpty();
     }
 
     @Test
-    void reverseSingle() {
+    void reverseWhenSingle() {
         int[] input = { 42 };
         int[] reversed = ReverseCopy.reverse(input);
         assertThat(reversed).contains(input);
     }
 
     @Test
-    void reverseEvenSize() {
+    void reverseWhenEvenSize() {
         int[] input = { 42, 12, 43, 65 };
         int[] expected = { 65, 43, 12, 42 };
 
@@ -40,7 +40,7 @@ class ReverseCopyTest {
     }
 
     @Test
-    void reverseOddSize() {
+    void reverseWhenOddSize() {
         int[] input = { 42, 12, 43, 65, 81 };
         int[] expected = { 81, 65, 43, 12, 42 };
 
