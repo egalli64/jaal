@@ -12,7 +12,7 @@ package com.example.jaal.m3.s2;
  */
 public class Fibonacci {
     /**
-     * Recursive Fibonacci
+     * Recursive Fibonacci - clean but expensive
      * 
      * @param n A natural number
      * @return the Fibonacci of n
@@ -26,7 +26,7 @@ public class Fibonacci {
     }
 
     /**
-     * Tail recursive Fibonacci
+     * Tail recursive Fibonacci - less expensive, a bit less clean
      * 
      * @param n A natural number
      * @return the Fibonacci of n
@@ -55,7 +55,7 @@ public class Fibonacci {
     }
 
     /**
-     * Iterative Fibonacci
+     * Iterative Fibonacci - Java preferred way
      * 
      * @param n A natural number
      * @return the Fibonacci of n
@@ -84,8 +84,8 @@ public class Fibonacci {
      */
     public static void main(String[] args) {
         int n = 40;
-        System.out.printf("Fibonacci of %d (recursive) is %d%n", n, recursive(n));
-        System.out.printf("Fibonacci of %d (tail recursive) is %d%n", n, tailRecursive(n));
-        System.out.printf("Fibonacci of %d (iterative) is %d%n", n, iterative(n));
+        System.out.printf("Fibonacci of %d (recursive) is %d\n", n, recursive(n));
+        System.out.printf("Fibonacci of %d (tail recursive) is %d\n", n, tailRecursive(n));
+        System.out.printf("Fibonacci of %d (iterative) is %d\n", n, iterative(n));
     }
 }
