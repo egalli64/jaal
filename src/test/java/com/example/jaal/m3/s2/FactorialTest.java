@@ -22,7 +22,7 @@ class FactorialTest {
      * TODO: discuss with the user the expected behavior for negative input
      */
     @Test
-    void recursiveNegative() {
+    void recursiveWhenNegativeThenOne() {
         assertThat(Factorial.recursive(-1024)).isEqualTo(1L);
     }
 
@@ -30,19 +30,19 @@ class FactorialTest {
      * TODO: discuss with the user the expected behavior for "large" input
      */
     @Test
-    void recursiveOverflow() {
+    void recursiveWhenLargeThenOverflow() {
         assertThat(Factorial.recursive(21)).isNegative();
     }
 
     @ParameterizedTest
     @CsvSource({ "0, 1", "1,1", "10, 3628800", "20, 2432902008176640000" })
-    void tailRecursivePlain(int input, long expected) {
+    void tailRecursiveWhenPlain(int input, long expected) {
         assertThat(Factorial.tailRecursive(input)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @CsvSource({ "0, 1", "1,1", "10, 3628800", "20, 2432902008176640000" })
-    void iterativePlain(int input, long expected) {
+    void iterativeWhenPlain(int input, long expected) {
         assertThat(Factorial.iterative(input)).isEqualTo(expected);
     }
 
@@ -50,7 +50,7 @@ class FactorialTest {
      * TODO: discuss with the user the expected behavior for negative input
      */
     @Test
-    void iterativeNegative() {
+    void iterativeWhenNegativeThenOne() {
         assertThat(Factorial.iterative(-1024)).isEqualTo(1L);
     }
 
@@ -58,7 +58,7 @@ class FactorialTest {
      * TODO: discuss with the user the expected behavior for "large" input
      */
     @Test
-    void iterativeOverflow() {
+    void iterativeWhenLargeThenOverflow() {
         assertThat(Factorial.iterative(21)).isNegative();
     }
 }
