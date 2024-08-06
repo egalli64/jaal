@@ -13,13 +13,13 @@ import org.junit.jupiter.params.provider.CsvSource;
 class GreatestCommonDivisorTest {
     @ParameterizedTest
     @CsvSource({ "1, 1, 1", "42, 56, 14", "461952, 116298, 18", "7966496, 314080416, 32" })
-    void recursivePlain(int a, int b, int expected) {
+    void recursiveWhenPlain(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.recursive(a, b)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @CsvSource({ "42, 0, 42", "0, 21, 21", "0, 0, 0" })
-    void recursiveZero(int a, int b, int expected) {
+    void recursiveWhenZeroThenZero(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.recursive(a, b)).isEqualTo(expected);
     }
 
@@ -30,23 +30,24 @@ class GreatestCommonDivisorTest {
      * 
      * @param a        could be negative?
      * @param b        could be negative?
-     * @param expected positive or negative accordingly to the number of iterations??
+     * @param expected positive or negative accordingly to the number of
+     *                 iterations??
      */
     @ParameterizedTest
     @CsvSource({ "1, -1, -1", "-42, 56, 14", "461952, -116298, -18", "-7966496, 314080416, 32" })
-    void recursiveNegative(int a, int b, int expected) {
+    void recursiveWhenNegativeThenUnreliable(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.recursive(a, b)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @CsvSource({ "1, 1, 1", "42, 56, 14", "461952, 116298, 18", "7966496, 314080416, 32" })
-    void iterativePlain(int a, int b, int expected) {
+    void iterativeWhenPlain(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.iterative(a, b)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @CsvSource({ "42, 0, 42", "0, 21, 21", "0, 0, 0" })
-    void iterativeZero(int a, int b, int expected) {
+    void iterativeWhenZeroThenZero(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.iterative(a, b)).isEqualTo(expected);
     }
 
@@ -57,11 +58,12 @@ class GreatestCommonDivisorTest {
      * 
      * @param a        could be negative?
      * @param b        could be negative?
-     * @param expected positive or negative accordingly to the number of iterations??
+     * @param expected positive or negative accordingly to the number of
+     *                 iterations??
      */
     @ParameterizedTest
     @CsvSource({ "1, -1, -1", "-42, 56, 14", "461952, -116298, -18", "-7966496, 314080416, 32" })
-    void iterativeNegative(int a, int b, int expected) {
+    void iterativeWhenNegativeThenUnreliable(int a, int b, int expected) {
         assertThat(GreatestCommonDivisor.iterative(a, b)).isEqualTo(expected);
     }
 }

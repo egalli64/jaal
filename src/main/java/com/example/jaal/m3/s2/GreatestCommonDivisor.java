@@ -9,7 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * GCD basic recursive and iterative implementations based on the Euclid's algorithm
+ * GCD basic recursive and iterative implementations based on the Euclid's
+ * algorithm
  * <p>
  * TODO: robustness
  */
@@ -17,7 +18,7 @@ public class GreatestCommonDivisor {
     private static final Logger log = LoggerFactory.getLogger(GreatestCommonDivisor.class);
 
     /**
-     * Recursive GCD
+     * Recursive GCD - inherently TCO-ready
      * 
      * @param a a natural number
      * @param b another natural number
@@ -27,13 +28,13 @@ public class GreatestCommonDivisor {
         log.trace("{}, {}", a, b);
         if (b == 0) {
             return a;
+        } else {
+            return recursive(b, a % b);
         }
-
-        return recursive(b, a % b);
     }
 
     /**
-     * Iterative GCD
+     * Iterative GCD - preferred in Java
      * 
      * @param a a natural number
      * @param b another natural number
@@ -59,7 +60,7 @@ public class GreatestCommonDivisor {
         int a = 42;
         int b = 35;
 
-        System.out.printf("GCD of %d and %d (recursive) is %d%n", a, b, recursive(a, b));
-        System.out.printf("GCD of %d and %d (iterative) is %d%n", a, b, iterative(a, b));
+        System.out.printf("GCD of %d and %d (recursive) is %d\n", a, b, recursive(a, b));
+        System.out.printf("GCD of %d and %d (iterative) is %d\n", a, b, iterative(a, b));
     }
 }
