@@ -14,6 +14,12 @@ import org.slf4j.LoggerFactory;
 public class Primitives {
     private static final Logger log = LoggerFactory.getLogger(Primitives.class);
 
+    /**
+     * Show that can't delegate to a method a primitive swap. The workaround is
+     * doing it locally
+     * 
+     * @param args not used
+     */
     public static void main(String[] args) {
         int x = 1;
         int y = 2;
