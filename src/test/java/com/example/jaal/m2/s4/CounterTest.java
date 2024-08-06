@@ -11,50 +11,53 @@ import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 import org.junit.jupiter.api.Test;
 
 class CounterTest {
-    private final int[] data = { 42, 12, 0, -21, 99, 5, 1, 0 };
+    private static final int[] data = { 42, 12, 0, -21, 99, 5, 1, 0 };
+    private static final int NR_EVEN = 4;
+    private static final int NR_POSITIVE = 5;
+    private static final int NR_ZERO = 2;
 
     @Test
-    void countEvenPlain() {
-        assertThat(Counter.countEven(data)).isEqualTo(4);
+    void countEvenWhenNonEmpty() {
+        assertThat(Counter.countEven(data)).isEqualTo(NR_EVEN);
     }
 
     @Test
-    void countEvenEmpty() {
+    void countEvenWhenEmpty() {
         assertThat(Counter.countEven(new int[] {})).isEqualTo(0);
     }
 
     @Test
-    void countEvenNull() {
+    void countEvenWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Counter.countEven(null));
     }
 
     @Test
-    void countPositivePlain() {
-        assertThat(Counter.countPositive(data)).isEqualTo(5);
+    void countPositiveWhenNonEmpty() {
+        assertThat(Counter.countPositive(data)).isEqualTo(NR_POSITIVE);
     }
 
     @Test
-    void countPositiveEmpty() {
+    void countPositiveWhenEmptyThenZero() {
         assertThat(Counter.countPositive(new int[] {})).isEqualTo(0);
     }
 
     @Test
-    void countPositiveNull() {
+    void countPositiveWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Counter.countPositive(null));
     }
 
     @Test
-    void countEqualToZero() {
-        assertThat(Counter.countEqualTo(data, 0)).isEqualTo(2);
+    void countEqualToGivenZeroWhenNonEmpty() {
+        assertThat(Counter.countEqualTo(data, 0)).isEqualTo(NR_ZERO);
     }
 
     @Test
-    void countEqualToEmpty() {
-        assertThat(Counter.countEqualTo(new int[] {}, 42)).isEqualTo(0);
+    void countEqualToGivenZeroWhenEmptyThenZero() {
+        assertThat(Counter.countEqualTo(new int[] {}, 0)).isEqualTo(0);
     }
 
     @Test
-    void countEqualToNull() {
+    void countEqualToWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Counter.countEqualTo(null, 42));
     }
 }
