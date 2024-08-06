@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class FactorialTest {
     @ParameterizedTest
     @CsvSource({ "0, 1", "1,1", "10, 3628800", "20, 2432902008176640000" })
-    void recursivePlain(int input, long expected) {
+    void recursiveWhenPlain(int input, long expected) {
         assertThat(Factorial.recursive(input)).isEqualTo(expected);
     }
 
