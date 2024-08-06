@@ -1,14 +1,20 @@
+/*
+ * Java - Algorithms
+ * 
+ * https://github.com/egalli64/jaal
+ */
 package com.example.jaal.m1.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIndexOutOfBoundsException;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class TrickyTest {
     @Test
-    void swapPlain() {
+    void buggySwapWhenPlainThenSwap() {
         int[] data = { 2, -9, 1, 3, 88, 5 };
         int i = 1;
         int j = 4;
@@ -21,27 +27,26 @@ class TrickyTest {
     }
 
     /**
-     * Success means that buggySwap() is buggy
-     * <p>
-     * This is not a kind of test you will often see
+     * This test fails, as expected
      */
     @Test
-    void swapSame() {
+    @Disabled
+    void buggySwapWhenSamePositionThenFail() {
         int[] data = { 2, -9, 1, 3, 88, 5 };
         int i = 1;
         int expectedValueI = data[i];
 
         Tricky.buggySwap(data, i, i);
-        assertThat(data[i]).isNotEqualTo(expectedValueI);
+        assertThat(data[i]).isEqualTo(expectedValueI);
     }
 
     @Test
-    void swapNull() {
+    void buggySwapWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Tricky.buggySwap(null, 0, 0));
     }
 
     @Test
-    void swapOutOfBounds() {
+    void buggySwapWhenBadIndicesThenException() {
         int[] data = { 2, -9, 1, 3, 88, 5 };
         assertThatIndexOutOfBoundsException().isThrownBy(() -> Tricky.buggySwap(data, 0, 42));
     }

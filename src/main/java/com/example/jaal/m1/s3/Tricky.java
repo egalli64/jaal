@@ -25,13 +25,13 @@ public class Tricky {
         x = x + y;
         y = x - y;
         x = x - y;
-        log.info("Unsafe swap: x={}, y={}", x, y);
+        log.info("Unsafe swap by adding and subtracting: x={}, y={}", x, y);
 
         // no temporary variable through XOR
         x = x ^ y;
         y = x ^ y;
         x = x ^ y;
-        log.info("XOR swap: x={}, y={}", x, y);
+        log.info("Unsafe swap by XOR: x={}, y={}", x, y);
 
         // big values could lead to undefined behavior (though usually looks all right)
         x = 2_000_000_000;
@@ -45,7 +45,7 @@ public class Tricky {
         log.warn("However, _usually_ we get the right result: x={}, y={}", x, y);
 
         // swapping an element with itself by XOR usually leads to error
-        int[] values = { 1, 2, 3 };
+        int[] values = { 11, 22, 33 };
 
         log.info("Before buggySwap(): {}", values);
         buggySwap(values, 0, 2);
@@ -67,12 +67,12 @@ public class Tricky {
      * @exception ArrayIndexOutOfBoundsException indices not in bound
      */
     public static void buggySwap(int[] data, int i, int j) {
-        log.trace("Before swapping {} and {}", data[i], data[j]);
+        log.trace("Before swapping values {} and {}", data[i], data[j]);
 
         data[i] = data[i] ^ data[j];
         data[j] = data[i] ^ data[j];
         data[i] = data[i] ^ data[j];
 
-        log.trace("After swapping {} and {}", data[i], data[j]);
+        log.trace("After swapping values {} and {}", data[i], data[j]);
     }
 }
