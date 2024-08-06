@@ -14,35 +14,37 @@ import org.junit.jupiter.api.Test;
 
 class MinimumTest {
     private final int[] data = { 42, 21, 1, 20, 99, 21, 1, 5 };
+    private final int MIN_VALUE = 1;
+    private final int MIN_FIRST_POS = 2;
 
     @Test
-    void minPlain() {
-        assertThat(Minimum.min(data)).isEqualTo(1);
+    void minWhenNonEmpty() {
+        assertThat(Minimum.min(data)).isEqualTo(MIN_VALUE);
     }
 
     @Test
-    void minEmpty() {
+    void minWhenEmptyThenException() {
         assertThatExceptionOfType(ArrayIndexOutOfBoundsException.class) //
                 .isThrownBy(() -> Minimum.min(new int[] {}));
     }
 
     @Test
-    void minNull() {
+    void minWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Minimum.min(null));
     }
 
     @Test
-    void getMinPosPlain() {
-        assertThat(Minimum.getMinPos(data)).isEqualTo(2);
+    void getMinPosWhenNonEmpty() {
+        assertThat(Minimum.getMinPos(data)).isEqualTo(MIN_FIRST_POS);
     }
 
     @Test
-    void getMinPosEmpty() {
+    void getMinPosWhenEmptyThenException() {
         assertThatIllegalArgumentException().isThrownBy(() -> Minimum.getMinPos(new int[] {}));
     }
 
     @Test
-    void getMinPosNull() {
+    void getMinPosWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Minimum.getMinPos(null));
     }
 }
