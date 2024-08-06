@@ -81,7 +81,7 @@ public class Finder {
 
         // Example for indexOf()
         int index = indexOf(data, value);
-        log.info("Value {} is in position {}", value, index);
+        log.info("First position for value {} is {}", value, index);
 
         // Example for contains()
         if (contains(data, value)) {
@@ -90,6 +90,6 @@ public class Finder {
 
         // Example for lastIndexOf()
         int lastIndex = lastIndexOf(data, value);
-        log.info("Value {} is in position {}", value, lastIndex);
+        log.info("Last position for value {} is {}", value, lastIndex);
     }
 }
