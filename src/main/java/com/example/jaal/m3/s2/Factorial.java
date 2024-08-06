@@ -35,8 +35,8 @@ public class Factorial {
     }
 
     /**
-     * Tail recursive implementation - not worthy, since there is no support to TCO
-     * in the compiler (yet)
+     * Tail recursive implementation - better for performance, but the Java support
+     * to Tail Call Optimization (TCO) is (currently) not complete
      * 
      * @param n a natural number (0+)
      * @return the factorial of n
@@ -61,7 +61,7 @@ public class Factorial {
     }
 
     /**
-     * Iterative implementation
+     * Iterative implementation - preferred
      * 
      * @param n A natural number
      * @return the factorial of n
@@ -83,8 +83,8 @@ public class Factorial {
      */
     public static void main(String[] args) {
         int n = 20;
-        System.out.printf("Factorial of %d is %d (recursive)%n", n, recursive(n));
-        System.out.printf("Factorial of %d is %d (tail recursive)%n", n, tailRecursive(n));
-        System.out.printf("Factorial of %d is %d (iterative)%n", n, iterative(n));
+        System.out.printf("Factorial of %d is %d (recursive)\n", n, recursive(n));
+        System.out.printf("Factorial of %d is %d (tail recursive)\n", n, tailRecursive(n));
+        System.out.printf("Factorial of %d is %d (iterative)\n", n, iterative(n));
     }
 }
