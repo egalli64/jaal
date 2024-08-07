@@ -24,7 +24,7 @@ public class ReverseCopy {
      * @return the generated reversed array
      */
     public static int[] reverse(int[] data) {
-        log.info("Parameter is {}", Arrays.toString(data));
+        log.info("Parameter is {}", data);
         if (data == null) {
             return data;
         }
@@ -35,7 +35,7 @@ public class ReverseCopy {
             result[data.length - i - 1] = data[i];
         }
 
-        log.info("The result is {}", Arrays.toString(result));
+        log.info("The result is {}", result);
         return result;
     }
 
