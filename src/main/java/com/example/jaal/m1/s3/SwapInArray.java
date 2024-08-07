@@ -5,8 +5,6 @@
  */
 package com.example.jaal.m1.s3;
 
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,9 +22,9 @@ public class SwapInArray {
     public static void main(String[] args) {
         int[] data = { 2, -9, 1, 3, 88, 5 };
 
-        log.info("Before swap(): " + Arrays.toString(data));
+        log.info("Before swap(): {}", data);
         swap(data, 1, 4);
-        log.info("After swap(): " + Arrays.toString(data));
+        log.info("After swap(): {}", data);
     }
 
     /**
