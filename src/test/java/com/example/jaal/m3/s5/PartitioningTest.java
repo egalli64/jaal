@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 class PartitioningTest {
     @Test
-    void pivotLeftPlain() {
+    void pivotLeftWhenPlain() {
         int pivot = 6;
         int[] values = { pivot, 1, 8, 5, 7, 0, 9, 3, -1, -3, 18, 10, 2 };
         int expected = 7;
@@ -30,7 +30,7 @@ class PartitioningTest {
     }
 
     @Test
-    void pivotLeftDuplicates() {
+    void pivotLeftWhenDuplicates() {
         int pivot = 6;
         int[] values = { pivot, 1, 8, 5, 7, 1, 9, 3, 5, 3, 8, 7, 2, 6 };
         int expected = 8;
@@ -47,7 +47,7 @@ class PartitioningTest {
     }
 
     @Test
-    void pivotLeftOrdered() {
+    void pivotLeftWhenOrdered() {
         int[] values = { 0, 1, 2, 3 };
         int actual = Partitioning.pivotLeft(values);
         assertThat(actual).isEqualTo(0);
@@ -57,47 +57,46 @@ class PartitioningTest {
     }
 
     @Test
-    void pivotLeftInverted() {
+    void pivotLeftWhenInverted() {
         int[] values = { 3, 2, 1, 0 };
         int actual = Partitioning.pivotLeft(values);
         assertThat(actual).isEqualTo(3);
     }
 
     @Test
-    void pivotLeftSingle() {
+    void pivotLeftWhenSingle() {
         int[] values = { 42 };
         int actual = Partitioning.pivotLeft(values);
         assertThat(actual).isEqualTo(0);
     }
 
     @Test
-    void pivotLeftCouple() {
+    void pivotLeftWhenCouple() {
         int[] values = { 12, 42 };
         int actual = Partitioning.pivotLeft(values);
         assertThat(actual).isEqualTo(0);
     }
 
     @Test
-    void pivotLeftInvertedCouple() {
+    void pivotLeftWhenInvertedCouple() {
         int[] values = { 42, 12 };
         int actual = Partitioning.pivotLeft(values);
         assertThat(actual).isEqualTo(1);
     }
 
-    
     @Test
-    void pivotLeftNull() {
+    void pivotLeftWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Partitioning.pivotLeft(null));
     }
 
     @Test
-    void pivotLeftEmpty() {
+    void pivotLeftWhenEmptyThenException() {
         assertThatExceptionOfType(ArrayIndexOutOfBoundsException.class)
                 .isThrownBy(() -> Partitioning.pivotLeft(new int[] {}));
     }
 
     @Test
-    void pivotGivenPlain() {
+    void pivotGivenWhenPlain() {
         int pivotPos = 4;
         int pivot = 6;
         int[] values = { 7, 1, 8, 5, pivot, 0, 9, 3, -1, -3, 18, 10, 2 };
@@ -115,7 +114,7 @@ class PartitioningTest {
     }
 
     @Test
-    void pivotGivenDuplicates() {
+    void pivotGivenWhenDuplicates() {
         int pivotPos = 4;
         int pivot = 6;
         int[] values = { 7, 1, 8, 5, pivot, 1, 9, 3, 5, 3, 8, 7, 2, 6 };
@@ -133,18 +132,18 @@ class PartitioningTest {
     }
 
     @Test
-    void pivotGivenNull() {
+    void pivotGivenWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Partitioning.pivotGiven(null, 0));
     }
 
     @Test
-    void pivotGivenEmpty() {
+    void pivotGivenWhenEmptyThenException() {
         assertThatExceptionOfType(ArrayIndexOutOfBoundsException.class)
                 .isThrownBy(() -> Partitioning.pivotGiven(new int[] {}, 0));
     }
 
     @Test
-    void pivotGivenBadPosition() {
+    void pivotGivenWhenBadPositionThenException() {
         assertThatExceptionOfType(ArrayIndexOutOfBoundsException.class)
                 .isThrownBy(() -> Partitioning.pivotGiven(new int[] { 42 }, 42));
     }
