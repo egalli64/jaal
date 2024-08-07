@@ -28,7 +28,7 @@ public class BinarySearch {
     }
 
     /**
-     * Internal loop for recursive binary search
+     * Internal recursion for binary search
      * 
      * @param values the searched sorted array
      * @param target the value to be found
@@ -92,8 +92,8 @@ public class BinarySearch {
         int targets[] = { 22, 36, 42, 35 };
 
         for (int target : targets) {
-            System.out.printf("%d is at %d (recursive)%n", target, recursive(values, target));
-            System.out.printf("%d is at %d (iterative)%n", target, iterative(values, target));
+            System.out.printf("%d is at %d (recursive)\n", target, recursive(values, target));
+            System.out.printf("%d is at %d (iterative)\n", target, iterative(values, target));
         }
     }
 }
