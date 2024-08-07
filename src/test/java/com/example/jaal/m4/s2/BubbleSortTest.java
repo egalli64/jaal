@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class BubbleSortTest {
     @Test
-    void basePlain() {
+    void baseWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -21,7 +21,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void baseOrdered() {
+    void baseWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -30,7 +30,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void baseEmpty() {
+    void baseWhenEmpty() {
         int[] data = {};
         int[] expected = {};
 
@@ -39,12 +39,12 @@ class BubbleSortTest {
     }
 
     @Test
-    void baseNull() {
+    void baseWhenNullTHenNPE() {
         assertThatNullPointerException().isThrownBy(() -> BubbleSort.base(null));
     }
 
     @Test
-    void improvedPlain() {
+    void improvedWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -53,7 +53,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void improvedOrdered() {
+    void improvedWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -62,7 +62,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void checkSwapPlain() {
+    void checkSwapWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -71,7 +71,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void checkSwapOrdered() {
+    void checkSwapWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -80,7 +80,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void checkSwapHalf() {
+    void checkSwapWhenHalf() {
         int[] data = { 3, 1, 0, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -89,7 +89,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void swapCutPlain() {
+    void swapCutWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -98,7 +98,7 @@ class BubbleSortTest {
     }
 
     @Test
-    void swapCutOrdered() {
+    void swapCutWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -107,7 +107,7 @@ class BubbleSortTest {
     }
     
     @Test
-    void swapCutHalf() {
+    void swapCutWhenHalf() {
         int[] data = { 3, 1, 0, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
