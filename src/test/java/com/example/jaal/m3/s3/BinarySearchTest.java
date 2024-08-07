@@ -18,65 +18,65 @@ class BinarySearchTest {
 
     @ParameterizedTest
     @CsvSource({ "12, 5", "93, 8", "115, 9" })
-    void iterativePlain(int target, int expected) {
+    void iterativeWhenFoundThenPosition(int target, int expected) {
         assertThat(BinarySearch.iterative(values, target)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @ValueSource(ints = { -56, -54, -1, 1, 219, 222 })
-    void iterativeNotFound(int target) {
+    void iterativeWhenMissingThenMinusOne(int target) {
         assertThat(BinarySearch.iterative(values, target)).isEqualTo(-1);
     }
 
     @Test
-    void iterativeSingleFound() {
+    void iterativeWhenSingleFound() {
         assertThat(BinarySearch.iterative(new int[] { 42 }, 42)).isEqualTo(0);
     }
 
     @Test
-    void iterativeSingleMissing() {
+    void iterativeWhenSingleMissing() {
         assertThat(BinarySearch.iterative(new int[] { 42 }, 12)).isEqualTo(-1);
     }
 
     @Test
-    void iterativeEmpty() {
+    void iterativeWhenEmpty() {
         assertThat(BinarySearch.iterative(new int[] {}, 42)).isEqualTo(-1);
     }
 
     @Test
-    void iterativeNull() {
+    void iterativeWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> BinarySearch.iterative(null, 0));
     }
 
     @ParameterizedTest
     @CsvSource({ "12, 5", "93, 8", "115, 9" })
-    void recursivePlain(int target, int expected) {
+    void recursiveWhenFoundThenPosition(int target, int expected) {
         assertThat(BinarySearch.recursive(values, target)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @ValueSource(ints = { -56, -54, -1, 1, 219, 222 })
-    void recursiveNotFound(int target) {
+    void recursiveWhenMissingThenMinusOne(int target) {
         assertThat(BinarySearch.recursive(values, target)).isEqualTo(-1);
     }
 
     @Test
-    void recursiveSingleFound() {
+    void recursiveWhenSingleFound() {
         assertThat(BinarySearch.recursive(new int[] { 42 }, 42)).isEqualTo(0);
     }
 
     @Test
-    void recursiveSingleMissing() {
+    void recursiveWhenSingleMissing() {
         assertThat(BinarySearch.recursive(new int[] { 42 }, 12)).isEqualTo(-1);
     }
 
     @Test
-    void recursiveEmpty() {
+    void recursiveWhenEmpty() {
         assertThat(BinarySearch.recursive(new int[] {}, 42)).isEqualTo(-1);
     }
 
     @Test
-    void recursiveNull() {
+    void recursiveWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> BinarySearch.recursive(null, 0));
     }
 }
