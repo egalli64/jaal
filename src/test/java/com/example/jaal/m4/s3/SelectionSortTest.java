@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class SelectionSortTest {
     @Test
-    void plainPlain() {
+    void plainWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -21,7 +21,7 @@ class SelectionSortTest {
     }
 
     @Test
-    void plainOrdered() {
+    void plainWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -30,7 +30,7 @@ class SelectionSortTest {
     }
 
     @Test
-    void plainEmpty() {
+    void plainWhenEmpty() {
         int[] data = {};
         int[] expected = {};
 
@@ -39,12 +39,12 @@ class SelectionSortTest {
     }
 
     @Test
-    void plainNull() {
+    void plainWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> SelectionSort.plain(null));
     }
 
     @Test
-    void lessWritePlain() {
+    void lessWriteWhenPlain() {
         int[] data = { 7, 1, 0, 5, 4, 3 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
@@ -53,7 +53,7 @@ class SelectionSortTest {
     }
 
     @Test
-    void lessWriteOrdered() {
+    void lessWriteWhenOrdered() {
         int[] data = { 0, 1, 3, 4, 5, 7 };
         int[] expected = { 0, 1, 3, 4, 5, 7 };
 
