@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class QuicksortTest {
     @Test
-    void plainPlain() {
+    void plainWhenPlain() {
         int[] data = { 107, 101, 100, 102, 105, 104, 103, 106 };
         int[] expected = { 100, 101, 102, 103, 104, 105, 106, 107 };
 
@@ -21,7 +21,7 @@ class QuicksortTest {
     }
 
     @Test
-    void plainOrdered() {
+    void plainWhenOrdered() {
         int[] data = { 100, 101, 102, 103, 104, 105, 106, 107 };
         int[] expected = { 100, 101, 102, 103, 104, 105, 106, 107 };
 
@@ -30,7 +30,7 @@ class QuicksortTest {
     }
 
     @Test
-    void plainEmpty() {
+    void plainWhenEmpty() {
         int[] data = {};
         int[] expected = {};
 
@@ -39,7 +39,7 @@ class QuicksortTest {
     }
 
     @Test
-    void plainNull() {
+    void plainWhenNullThenNPE() {
         assertThatNullPointerException().isThrownBy(() -> Quicksort.plain(null));
     }
 }
