@@ -23,7 +23,7 @@ public class ReverseInPlace {
      * @param data the array to be reversed
      */
     public static void reverse(int[] data) {
-        log.info("Parameter is {}", Arrays.toString(data));
+        log.info("Parameter is {}", data);
         if (data == null) {
             return;
         }
@@ -34,7 +34,7 @@ public class ReverseInPlace {
             data[data.length - i - 1] = tmp;
         }
 
-        log.info("Reversed parameter is {}", Arrays.toString(data));
+        log.info("Reversed parameter is {}", data);
     }
 
     /**
