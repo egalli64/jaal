@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class MergeTest {
     @Test
-    void iterativePlain() {
+    void iterativeWhenPlain() {
         int[] left = { 1, 3 };
         int[] right = { 2, 3, 4, 5 };
         int[] expected = { 1, 2, 3, 3, 4, 5 };
@@ -21,7 +21,7 @@ class MergeTest {
     }
 
     @Test
-    void iterativePlainSameSize() {
+    void iterativeWhenPlainSameSize() {
         int[] left = { 1, 3, 5 };
         int[] right = { 2, 3, 4 };
         int[] expected = { 1, 2, 3, 3, 4, 5 };
@@ -30,7 +30,7 @@ class MergeTest {
     }
 
     @Test
-    void iterativeEmpty() {
+    void iterativeWhenOneEmpty() {
         int[] left = { 1, 3, 5 };
         int[] right = {};
         int[] expected = { 1, 3, 5 };
@@ -39,13 +39,13 @@ class MergeTest {
     }
 
     @Test
-    void iterativeNull() {
+    void iterativeWhenOneNullThenNPE() {
         int[] left = { 1, 3, 5 };
         assertThatNullPointerException().isThrownBy(() -> Merge.iterative(left, null));
     }
 
     @Test
-    void recursivePlain() {
+    void recursiveWhenPlain() {
         int[] left = { 1, 3 };
         int[] right = { 2, 3, 4, 5 };
         int[] expected = { 1, 2, 3, 3, 4, 5 };
@@ -54,7 +54,7 @@ class MergeTest {
     }
 
     @Test
-    void recursivePlainSameSize() {
+    void recursiveWhenPlainSameSize() {
         int[] left = { 1, 3, 5 };
         int[] right = { 2, 3, 4 };
         int[] expected = { 1, 2, 3, 3, 4, 5 };
@@ -63,7 +63,7 @@ class MergeTest {
     }
 
     @Test
-    void recursiveEmpty() {
+    void recursiveWhenOneEmpty() {
         int[] left = { 1, 3, 5 };
         int[] right = {};
         int[] expected = { 1, 3, 5 };
@@ -72,7 +72,7 @@ class MergeTest {
     }
 
     @Test
-    void recursiveNull() {
+    void recursiveWhenOneNullThenNPE() {
         int[] left = { 1, 3, 5 };
         assertThatNullPointerException().isThrownBy(() -> Merge.iterative(left, null));
     }
