@@ -25,12 +25,12 @@ public class AReassignment {
         log.info("First is {}, second is {}", a, b);
 
         int min = a;
-        if (b < a) {
+        if (b < min) {
             min = b;
         }
 
         int max = a;
-        if (b > a) {
+        if (b > min) {
             max = b;
         }
 
