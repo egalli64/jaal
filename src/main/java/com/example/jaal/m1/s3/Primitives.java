@@ -23,16 +23,16 @@ public class Primitives {
     public static void main(String[] args) {
         int x = 1;
         int y = 2;
-        log.info("First is {}, second is {}", x, y);
+        log.info("x is {}, y is {}", x, y);
 
         buggySwap(x, y);
-        log.info("After call to (buggy) swap method: first is {}, second is {}", x, y);
+        log.info("After call to (buggy) swap method: x is {}, y is {}", x, y);
 
         // Workaround: swap primitives where it is needed
         int temp = x;
         x = y;
         y = temp;
-        log.info("After local swap: first is {}, second is {}", x, y);
+        log.info("After local swap: x is {}, y is {}", x, y);
     }
 
     /**
