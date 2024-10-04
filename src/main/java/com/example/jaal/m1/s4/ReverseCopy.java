@@ -31,9 +31,15 @@ public class ReverseCopy {
 
         int[] result = new int[data.length];
 
+        // Using a single loop variable
         for (int i = 0; i < data.length; i++) {
             result[data.length - i - 1] = data[i];
         }
+
+        // Same, but using two loop variables
+//        for (int i = 0, j = data.length - 1; i < data.length; i++, j--) {
+//            result[j] = data[i];
+//        }
 
         log.info("The result is {}", result);
         return result;
