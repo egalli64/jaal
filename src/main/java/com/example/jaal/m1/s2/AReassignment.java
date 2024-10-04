@@ -29,11 +29,14 @@ public class AReassignment {
             min = b;
         }
 
+        // max
         int max = a;
-        if (b > min) {
+        if (b > max) {
             max = b;
         }
 
         System.out.printf("Min is %d and max is %d\n", min, max);
+        System.out.print("Min is " + min);
+        System.out.println(" and max is " + max);
     }
 }
