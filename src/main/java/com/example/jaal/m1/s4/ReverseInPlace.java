@@ -28,11 +28,20 @@ public class ReverseInPlace {
             return;
         }
 
-        for (int i = 0; i < data.length / 2; i++) {
+        // using two loop variables
+        for (int i = 0, j = data.length - 1; i < j; i++, j--) {
             int tmp = data[i];
-            data[i] = data[data.length - i - 1];
-            data[data.length - i - 1] = tmp;
+            data[i] = data[j];
+            data[j] = tmp;
         }
+
+        // same, but j is derived from i
+//        for (int i = 0; i < data.length / 2; i++) {
+//            int j = data.length - i - 1;
+//            int tmp = data[i];
+//            data[i] = data[j];
+//            data[j] = tmp;
+//        }
 
         log.info("Reversed parameter is {}", data);
     }
